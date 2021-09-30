@@ -19,6 +19,10 @@ import AVFoundation
         self.commandDelegate = commandDelegate
     }
 
+    override init(webViewEngine: WKWebView) {
+        super.init()
+    }
+
     /**
      Permits to free the memory from the audioRecord instance
      */
@@ -71,7 +75,7 @@ import AVFoundation
 
                 do {
                     let audioSession: AVAudioSession = AVAudioSession.sharedInstance()
-                    try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+                    try audioSession.setCategory(AVAudioSession.Category.playAndRecord)
                     try audioSession.setActive(true)
 
                     self.audioRecorder = try AVAudioRecorder(url: url, settings: settings)
