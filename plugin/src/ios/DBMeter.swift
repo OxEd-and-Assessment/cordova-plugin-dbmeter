@@ -21,6 +21,7 @@ import AVFoundation
 
     override init(webViewEngine: WKWebView) {
         super.init()
+        self.webViewEngine = webViewEngine
     }
 
     /**
